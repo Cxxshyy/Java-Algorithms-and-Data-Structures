@@ -20,14 +20,14 @@ public class LinkedList {
         nodeB.next = nodeC;
         nodeC.next = nodeD;
         nodeD.next = nodeF;
-        // int length = countNodes(head);
-        // displayNode(head,length);
-        // reverseLinkedList(head,length);
-        // displayNode(head,length);
-        // removeNode(head,4,length);
-        // displayNode(head,length);
+        countNodes(head);
+        displayNode(head);
+        reverseLinkedList(head);
+        displayNode(head);
+        removeNode(head, 4);
+        displayNode(head);
         oddEven(head);
-        // displayNode(head);
+        displayNode(head);
 
         // TODO code application logic here
     }
@@ -64,7 +64,7 @@ public class LinkedList {
 
     }
 
-    static Node reverseLinkedList(Node head, int length) {
+    static Node reverseLinkedList(Node head) {
 
         Node prev = null;
         while (head != null) {
@@ -77,9 +77,9 @@ public class LinkedList {
         return prev;
     }
 
-    static void removeNode(Node head, int val, int length) {
+    static void removeNode(Node head, int val) {
 
-        while (head != null) {
+        while (head != null && head.next != null) {
             if (head.next.data == val) { // check if next node is the one to delete
                 if (head.next.next != null) { // if yes and its not last
                     head.next = head.next.next; // change curtrent node to point to next one after node to delete
